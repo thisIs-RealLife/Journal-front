@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Padauk&display=swap');
+.col-12{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+button{
+  outline: none !important;
+}
+
+.row{
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+}
+body{
+  font-family: 'Padauk', sans-serif !important;
+}
+

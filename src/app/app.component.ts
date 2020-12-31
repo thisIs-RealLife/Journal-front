@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {ToggleSidenavComponent} from './toggle-sidenav/toggle-sidenav.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Journal';
+  @ViewChild(ToggleSidenavComponent)
+  toggleSideNavComponent: ToggleSidenavComponent;
+
+  open(): void{
+
+  }
 }

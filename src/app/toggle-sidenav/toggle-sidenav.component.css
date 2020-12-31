@@ -1,0 +1,40 @@
+
+.example-container {
+  width: 100%;
+  height: 100%;
+
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+
+}
+
+.example-sidenav {
+  height: 100%;
+}
+.logo{
+  border-bottom: 1px solid silver;
+  font-size: 20px;
+  padding: 20px;
+}
+li{
+  list-style-type: none;
+  width: 100%;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item{
+  font-size: 18px;
+  padding: 20px;
+}
+.menu-item:hover{
+  background-color: silver;
+}
+
