@@ -24,11 +24,15 @@ export class TestData {
     {id: 6, mark: 5, subject: TestData.subject[0]},
   ];
   static students: Student[] = [
-    {id: 1, name: 'Alex', surName: 'Bezdarev', age: 18, password: 'dfs', subjects: [TestData.subject[0]]},
-    {id: 2, name: 'Sergej', surName: 'Bordev', age: 14, password: 'fkjhj', subjects: [TestData.subject[1]]},
-    {id: 3, name: 'Sasha', surName: 'Smirnov', age: 17, password: 'fsd', subjects: [TestData.subject[2]]},
-    {id: 4, name: 'Evgen', surName: 'Vasytkin', age: 14, password: 'bxvcb', subjects: [TestData.subject[3]]},
-    {id: 5, name: 'Misha', surName: 'Nikolaev', age: 17, password: 'dlkflsdkfl', subjects: [TestData.subject[4]]},
-    {id: 6, name: 'Dasha', surName: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: [TestData.subject[5]]}
+    {id: 1, name: 'Alex', surname: 'Bezdarev', age: 18, password: 'dfs', subjects: [TestData.subject[0]]},
+    {id: 2, name: 'Sergej', surname: 'Bordev', age: 14, password: 'fkjhj', subjects: [TestData.subject[1]]},
+    {id: 3, name: 'Sasha', surname: 'Smirnov', age: 17, password: 'fsd', subjects: [TestData.subject[2]]},
+    {id: 4, name: 'Evgen', surname: 'Vasytkin', age: 14, password: 'bxvcb', subjects: [TestData.subject[3]]},
+    {id: 5, name: 'Misha', surname: 'Nikolaev', age: 17, password: 'dlkflsdkfl', subjects: [TestData.subject[4]]},
+    {id: 6, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: [TestData.subject[5]]},
+    {id: 7, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: [TestData.subject[5]]},
+    {id: 8, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: [TestData.subject[5]]},
+    {id: 9, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: [TestData.subject[5]]},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: [TestData.subject[5]]}
   ];
 }

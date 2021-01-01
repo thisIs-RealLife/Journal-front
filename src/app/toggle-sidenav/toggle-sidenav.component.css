@@ -7,9 +7,9 @@
 
 .example-sidenav-content {
   display: flex;
-  height: 100%;
   justify-content: center;
-
+  background: #fff; /* цвет фона, белый */
+  border: 1px solid #C1C1C1; /* размер и цвет границы блока */
 }
 
 .example-sidenav {
@@ -37,4 +37,5 @@ ul{
 .menu-item:hover{
   background-color: silver;
 }
+
 

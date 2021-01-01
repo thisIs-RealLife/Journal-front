@@ -26,13 +26,15 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ToggleSidenavComponent } from './toggle-sidenav/toggle-sidenav.component';
+import { StatsComponent } from './stats/stats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     ToolbarComponent,
-    ToggleSidenavComponent
+    ToggleSidenavComponent,
+    StatsComponent
   ],
   imports: [
     MatTableModule,
