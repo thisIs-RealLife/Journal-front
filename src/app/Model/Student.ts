@@ -7,8 +7,6 @@ export class Student {
   age: number;
   password: string;
   subjects?: Subject[];
-
-
   constructor(id: number, name: string, surname: string, age: number, password: string) {
     this.id = id;
     this.name = name;

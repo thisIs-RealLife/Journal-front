@@ -7,12 +7,12 @@ export class TestData {
 
 
   static subject: Subject[] = [
-    {id: 1, nameSubject: 'Math'},
+    {id: 1, nameSubject: 'Math', mark: new Mark(5)},
     {id: 2, nameSubject: 'Rus'},
     {id: 3, nameSubject: 'Engl', },
     {id: 4, nameSubject: 'History' },
     {id: 5, nameSubject: 'Geografi' },
-    {id: 6, nameSubject: 'Culture' }
+    {id: 6, nameSubject: 'Culture', professor: 'Lusenko' }
   ];
 
   static mark: Mark[] = [
@@ -33,6 +33,30 @@ export class TestData {
     {id: 7, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: [TestData.subject[5]]},
     {id: 8, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: [TestData.subject[5]]},
     {id: 9, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: [TestData.subject[5]]},
-    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: [TestData.subject[5]]}
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject},
+    {id: 10, name: 'Dasha', surname: 'Shabonkina', age: 15, password: 'ASDdsd', subjects: TestData.subject}
   ];
 }

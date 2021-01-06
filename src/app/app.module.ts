@@ -24,9 +24,13 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { ToggleSidenavComponent } from './toggle-sidenav/toggle-sidenav.component';
-import { StatsComponent } from './stats/stats.component';
+import {ToolbarComponent} from './toolbar/toolbar.component';
+import {ToggleSidenavComponent} from './toggle-sidenav/toggle-sidenav.component';
+import {StatsComponent} from './stats/stats.component';
+import {DialogEditSubjectComponent} from './dialog-edit-subject/dialog-edit-subject.component';
+import {DialogEditStudentComponent} from './dialog-edit-student/dialog-edit-student.component';
+import {DialogDeleteSubjectComponent} from './dialog-delete-subject/dialog-delete-subject.component';
+import {DialogDeleteStudentComponent} from './dialog-delete-student/dialog-delete-student.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +38,14 @@ import { StatsComponent } from './stats/stats.component';
     TableComponent,
     ToolbarComponent,
     ToggleSidenavComponent,
-    StatsComponent
+    StatsComponent,
+    DialogEditSubjectComponent,
+    DialogEditStudentComponent,
+    DialogDeleteSubjectComponent,
+    DialogDeleteStudentComponent,
   ],
   imports: [
+    MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
@@ -63,6 +72,11 @@ import { StatsComponent } from './stats/stats.component';
     MatSidenavModule
   ],
   providers: [],
+  entryComponents: [
+    DialogEditSubjectComponent,
+    DialogDeleteStudentComponent,
+    DialogDeleteSubjectComponent,
+    DialogEditStudentComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
