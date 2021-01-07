@@ -8,7 +8,6 @@
   display: flex;
   justify-content: center;
   background: #eee; /* цвет фона, белый */
-  border: 1px solid #C1C1C1; /* размер и цвет границы блока */
 }
 
 .example-sidenav {

@@ -1,26 +1,50 @@
-
+<p>Редактирование предмета</p>
+<div>
+  <span>
 <mat-form-field class="example-form-field">
-  <mat-label>Clearable input</mat-label>
-  <input matInput type="text" [(ngModel)]="professor">
-  <button mat-button *ngIf="professor" matSuffix mat-icon-button aria-label="Clear" (click)="professor=''">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
-
-<mat-form-field class="example-form-field">
-  <mat-label>Clearable input</mat-label>
-  <input matInput type="text" [(ngModel)]="mark">
-  <button mat-button *ngIf="mark" matSuffix mat-icon-button aria-label="Clear" (click)="mark=''">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
-
-<mat-form-field class="example-form-field">
-  <mat-label>Clearable input</mat-label>
+  <mat-label>Название предмета</mat-label>
   <input matInput type="text" [(ngModel)]="name">
   <button mat-button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
     <mat-icon>close</mat-icon>
   </button>
 </mat-form-field>
+</span>
 
+  <span>
+<mat-form-field class="example-form-field">
+  <mat-label> Преподаватель</mat-label>
+  <input matInput type="text" [(ngModel)]="professor">
+  <button mat-button *ngIf="professor" matSuffix mat-icon-button aria-label="Clear" (click)="professor=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+</span>
 
+  <span>
+<mat-form-field class="example-form-field">
+  <mat-label>Оценка по предмету</mat-label>
+  <input matInput type="text" [(ngModel)]="mark">
+  <button mat-button *ngIf="mark" matSuffix mat-icon-button aria-label="Clear" (click)="mark=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+</span>
+</div>
+
+<div class="wrapper">
+  <div class="accept-button">
+  <button mat-icon-button color="primary"
+          aria-label="Example icon button with a home icon" (click)="outDialog()">
+    <mat-icon matSuffix>clear</mat-icon>
+    Не сохранять
+  </button>
+  </div>
+
+  <div class="accept-button">
+  <button mat-icon-button color="warn" style="margin-left: 100px"
+          aria-label="Example icon button with a home icon" (click)="editSubject()">
+    <mat-icon matSuffix>done</mat-icon>
+    Сохранить
+  </button>
+  </div>
+</div>

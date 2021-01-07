@@ -1,1 +1,50 @@
-<p>dialog-edit-student works!</p>
+<p>Изменить информацию о студенте</p>
+<div>
+  <span>
+<mat-form-field class="example-form-field">
+  <mat-label>Укажите имя</mat-label>
+  <input matInput type="text" [(ngModel)]="name">
+  <button mat-button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+</span>
+
+  <span>
+<mat-form-field class="example-form-field">
+  <mat-label>Укажите фамилию</mat-label>
+  <input matInput type="text" [(ngModel)]="surname">
+  <button mat-button *ngIf="surname" matSuffix mat-icon-button aria-label="Clear" (click)="surname=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+</span>
+
+  <span>
+<mat-form-field class="example-form-field">
+  <mat-label>Укажите возраст</mat-label>
+  <input matInput type="text" [(ngModel)]="age">
+  <button mat-button *ngIf="age" matSuffix mat-icon-button aria-label="Clear" (click)="age=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+</span>
+</div>
+
+<div class="wrapper">
+  <div class="accept-button">
+    <button mat-icon-button color="primary"
+            aria-label="Example icon button with a home icon" (click)="outDialog()">
+      <mat-icon matSuffix>clear</mat-icon>
+      Не сохранять
+    </button>
+  </div>
+
+  <div class="accept-button">
+    <button mat-icon-button color="warn" style="margin-left: 100px"
+            aria-label="Example icon button with a home icon" (click)="editSubject()">
+      <mat-icon matSuffix>done</mat-icon>
+      Сохранить
+    </button>
+  </div>
+</div>

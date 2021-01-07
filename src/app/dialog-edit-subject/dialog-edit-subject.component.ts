@@ -11,7 +11,7 @@ export class DialogEditSubjectComponent implements OnInit {
   subject: Subject;
   professor = '';
   name = '';
-  mark ;
+  mark;
 
   constructor(
     public dialogRef: MatDialogRef<DialogEditSubjectComponent>,
@@ -23,5 +23,13 @@ export class DialogEditSubjectComponent implements OnInit {
     this.professor = this.subject.professor;
     this.name = this.subject.nameSubject;
     this.mark = this.subject.mark.mark;
+  }
+
+  outDialog(): void {
+    this.dialogRef.close();
+  }
+
+  editSubject(): void {
+    this.outDialog();
   }
 }

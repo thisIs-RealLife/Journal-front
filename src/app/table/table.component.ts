@@ -95,6 +95,4 @@ export class TableComponent implements OnInit, AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
-
 }

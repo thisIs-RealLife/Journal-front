@@ -1,1 +1,14 @@
-<p>dialog-delete-subject works!</p>
+<div class="wrapper">
+  <p>Вы действительно хотите удалить этот предмет?</p>
+  <button mat-icon-button color="primary"
+          aria-label="Example icon button with a home icon" (click)="outDialog()">
+    <mat-icon matSuffix>clear</mat-icon>
+    No
+  </button>
+
+  <button mat-icon-button color="warn" style="margin-left: 20px"
+          aria-label="Example icon button with a home icon" (click)="deleteSubject()">
+    <mat-icon matSuffix>done</mat-icon>
+    Yes
+  </button>
+</div>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {Student} from '../Model/Student';
 
 @Component({
   selector: 'app-dialog-delete-student',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogDeleteStudentComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<DialogDeleteStudentComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: [Student]
+  ) { }
 
   ngOnInit(): void {
   }
 
+  outDialog(): void {
+    this.dialogRef.close();
+  }
+
+  deleteSubject(): void {
+    this.outDialog();
+  }
 }
