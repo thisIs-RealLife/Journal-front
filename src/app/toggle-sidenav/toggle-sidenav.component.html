@@ -1,11 +1,43 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="over">
-    <p class="logo">Table Students</p>
-    <p class="menu-item">Students SPBGU</p>
-    <p class="menu-item">Students ITMO</p>
-    <p class="menu-item">Students GYAP</p>
-    <p class="menu-item">Students Politeh</p>
-    <p class="menu-item">Students VOENMEH</p>
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer class="example-sidenav" mode="over" [style.position]="flag?'fixed':'absolute' ">
+    <div style="background-image: url(./assets/sidebar.jpg)" class="sidenav">
+    </div>
+    <p class="logo" style="text-align: center">Student Table</p>
+    <div class="menu-item">
+      <div class="icon-item" >
+        <mat-icon >turned_in_not</mat-icon>
+      </div>
+      St. SPBU
+    </div>
+
+    <div class="menu-item">
+      <div class="icon-item" >
+        <mat-icon >library_books</mat-icon>
+      </div>
+      St. Voenmeh
+    </div>
+
+    <div class="menu-item">
+      <div class="icon-item" >
+        <mat-icon >tab</mat-icon>
+      </div>
+      St. Gyap
+    </div>
+
+    <div class="menu-item">
+      <div class="icon-item" >
+        <mat-icon >wysiwyg</mat-icon>
+      </div>
+      St. Politeh
+    </div>
+
+    <div class="menu-item">
+      <div class="icon-item" >
+        <mat-icon >devices</mat-icon>
+      </div>
+      St. Itmo
+    </div>
+
   </mat-drawer>
 
   <div class="example-sidenav-content">

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {MatDrawer} from '@angular/material/sidenav';
 
 
@@ -10,8 +10,16 @@ import {MatDrawer} from '@angular/material/sidenav';
 export class ToggleSidenavComponent implements OnInit {
   @ViewChild('drawer')
   drawer: MatDrawer;
+  flag: boolean;
 
-  showFiller = false;
+  @HostListener('window:scroll', ['$event'])
+  doSomething(event: any): void {
+    if (window.pageYOffset > 64) {
+      this.flag = true;
+    } else if (window.pageYOffset < 65){
+      this.flag = false;
+    }
+  }
 
   constructor() {
   }
@@ -22,5 +30,6 @@ export class ToggleSidenavComponent implements OnInit {
 
   open(): void {
     this.drawer.toggle();
+    const flaggg = this.drawer.opened;
   }
 }

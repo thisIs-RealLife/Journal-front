@@ -45,6 +45,7 @@ import {DialogDeleteStudentComponent} from './dialog-delete-student/dialog-delet
     DialogDeleteStudentComponent,
   ],
   imports: [
+    MatButtonModule,
     MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
@@ -52,7 +53,6 @@ import {DialogDeleteStudentComponent} from './dialog-delete-student/dialog-delet
     BrowserModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatButtonModule,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
