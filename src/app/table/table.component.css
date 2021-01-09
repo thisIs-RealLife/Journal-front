@@ -149,3 +149,16 @@ th{
 .table-div{
   padding-bottom: 40px;
 }
+.add{
+  color: #a1fea1;
+  border-radius: 4px;
+  border: 1px solid #d9f3b0;
+
+  box-sizing: unset;
+  width: max-content;
+  padding: 5px 5px;
+}
+.options{
+
+  width: max-content;
+}

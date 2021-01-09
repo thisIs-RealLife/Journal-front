@@ -8,4 +8,10 @@ export class Subject {
   student?: Student;
   mark?: Mark;
 
+
+  constructor(nameSubject: string, professor: string, mark: Mark) {
+    this.nameSubject = nameSubject;
+    this.professor = professor;
+    this.mark = mark;
+  }
 }

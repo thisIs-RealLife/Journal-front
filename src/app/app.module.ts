@@ -31,6 +31,8 @@ import {DialogEditSubjectComponent} from './dialog-edit-subject/dialog-edit-subj
 import {DialogEditStudentComponent} from './dialog-edit-student/dialog-edit-student.component';
 import {DialogDeleteSubjectComponent} from './dialog-delete-subject/dialog-delete-subject.component';
 import {DialogDeleteStudentComponent} from './dialog-delete-student/dialog-delete-student.component';
+import { DialogAddStudentComponent } from './dialog-add-student/dialog-add-student.component';
+import { DialogAddSubjectComponent } from './dialog-add-subject/dialog-add-subject.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import {DialogDeleteStudentComponent} from './dialog-delete-student/dialog-delet
     DialogEditStudentComponent,
     DialogDeleteSubjectComponent,
     DialogDeleteStudentComponent,
+    DialogAddStudentComponent,
+    DialogAddSubjectComponent,
   ],
   imports: [
     MatButtonModule,
@@ -76,7 +80,10 @@ import {DialogDeleteStudentComponent} from './dialog-delete-student/dialog-delet
     DialogEditSubjectComponent,
     DialogDeleteStudentComponent,
     DialogDeleteSubjectComponent,
-    DialogEditStudentComponent],
+    DialogEditStudentComponent,
+    DialogAddStudentComponent,
+    DialogAddSubjectComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

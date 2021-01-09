@@ -12,6 +12,8 @@ import {MatSort} from '@angular/material/sort';
 import {DialogEditStudentComponent} from '../dialog-edit-student/dialog-edit-student.component';
 import {DialogDeleteStudentComponent} from '../dialog-delete-student/dialog-delete-student.component';
 import {DialogDeleteSubjectComponent} from '../dialog-delete-subject/dialog-delete-subject.component';
+import {DialogAddStudentComponent} from '../dialog-add-student/dialog-add-student.component';
+import {DialogAddSubjectComponent} from "../dialog-add-subject/dialog-add-subject.component";
 
 @Component({
   selector: 'app-table',
@@ -34,15 +36,17 @@ export class TableComponent implements OnInit, AfterViewInit {
   dataSource: MatTableDataSource<Student>;
   students: Student[];
   expandedElement: Student;
+  student: Student;
+  index = 0;
 
 
   constructor(private studentService: StudentService,
-              private testData: TestDataService,
               public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<Student>(this.testData.getStudent());
+    this.refreshData();
+    this.dataSource = new MatTableDataSource<Student>(this.students);
   }
 
   ngAfterViewInit(): void {
@@ -51,26 +55,38 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
 
 
-  addTableFunction(): void {
-    // this.dataSource.sortingDataAccessor = (student, col) => {
-    //   switch (col){
-    //     case 'name':
-    //   }
-    // };
+  refreshTable(): void {
+    this.dataSource = new MatTableDataSource<Student>(this.students);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
+
+  refreshData(): void {
+    this.studentService.getAll().subscribe(next => {
+      const students2: Student[] = next;
+      this.students = students2;
+      this.refreshTable();
+      this.index = this.students[0].id;
+    });
+    this.dataSource = new MatTableDataSource<Student>(this.students);
+  }
+
+
 
   deleteStudent(student: Student, event: any): void {
     event.stopPropagation();
     const dialogRef = this.dialog.open(DialogDeleteStudentComponent, {
       data: [student]
     });
+    dialogRef.afterClosed().subscribe(next => this.refreshData());
   }
 
-  deleteSubject(subject: Subject, event: any): void {
+  deleteSubject(subject: Subject, student: Student, event: any): void {
     event.stopPropagation();
     const dialogRef = this.dialog.open(DialogDeleteSubjectComponent, {
-      data: [subject]
+      data: [subject, student]
     });
+    dialogRef.afterClosed().subscribe(next => this.refreshData());
   }
 
   editStudent(student: Student, event: any): void {
@@ -78,13 +94,14 @@ export class TableComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(DialogEditStudentComponent, {
       data: [student]
     });
+    dialogRef.afterClosed().subscribe(next => this.refreshData());
   }
 
-  editSubject(subject: Subject): void {
+  editSubject(subject: Subject, student: Student): void {
     const dialogRef = this.dialog.open(DialogEditSubjectComponent, {
-      data: [subject]
+      data: [subject, student]
     });
-    dialogRef.afterClosed().subscribe(result => console.log(result));
+    dialogRef.afterClosed().subscribe(next => this.refreshData());
   }
 
   applyFilter($event: KeyboardEvent): void {
@@ -94,5 +111,17 @@ export class TableComponent implements OnInit, AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  addStudent(): void {
+    const dialogRef = this.dialog.open(DialogAddStudentComponent);
+    dialogRef.afterClosed().subscribe(next => this.refreshData());
+  }
+
+  addSubject(student: Student, $event: MouseEvent): void {
+    const dialogRef = this.dialog.open(DialogAddSubjectComponent, {
+      data: [student]
+    });
+    dialogRef.afterClosed().subscribe(next => this.refreshData());
   }
 }

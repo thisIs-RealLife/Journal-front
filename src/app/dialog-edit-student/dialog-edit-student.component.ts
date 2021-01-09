@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {Student} from '../Model/Student';
+import {StudentService} from '../DAO/implements/student.service';
 
 @Component({
   selector: 'app-dialog-edit-student',
@@ -16,7 +17,8 @@ export class DialogEditStudentComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<DialogEditStudentComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: [Student]
+    @Inject(MAT_DIALOG_DATA) public data: [Student],
+    private studentService: StudentService
   ) { }
 
   ngOnInit(): void {
@@ -31,7 +33,12 @@ export class DialogEditStudentComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  editSubject(): void {
+  editStudent(): void {
+    this.student.name = this.name;
+    this.student.surname = this.surname;
+    this.student.age = this.age;
+    this.student.name = this.name;
+    this.studentService.update(this.student).subscribe(next => console.log(next));
     this.outDialog();
   }
 }
