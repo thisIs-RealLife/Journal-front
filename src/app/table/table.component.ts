@@ -1,9 +1,8 @@
-import {AfterViewChecked, AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatTableDataSource} from '@angular/material/table';
 import {Student} from '../Model/Student';
 import {StudentService} from '../DAO/implements/student.service';
-import {TestDataService} from '../service/TestData.service';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogEditSubjectComponent} from '../dialog-edit-subject/dialog-edit-subject.component';
 import {Subject} from '../Model/Subject';
@@ -13,7 +12,7 @@ import {DialogEditStudentComponent} from '../dialog-edit-student/dialog-edit-stu
 import {DialogDeleteStudentComponent} from '../dialog-delete-student/dialog-delete-student.component';
 import {DialogDeleteSubjectComponent} from '../dialog-delete-subject/dialog-delete-subject.component';
 import {DialogAddStudentComponent} from '../dialog-add-student/dialog-add-student.component';
-import {DialogAddSubjectComponent} from "../dialog-add-subject/dialog-add-subject.component";
+import {DialogAddSubjectComponent} from '../dialog-add-subject/dialog-add-subject.component';
 
 @Component({
   selector: 'app-table',
@@ -40,9 +39,13 @@ export class TableComponent implements OnInit, AfterViewInit {
   index = 0;
 
 
+
   constructor(private studentService: StudentService,
               public dialog: MatDialog) {
+    this.subscribe();
   }
+
+
 
   ngOnInit(): void {
     this.refreshData();
@@ -63,12 +66,22 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   refreshData(): void {
     this.studentService.getAll().subscribe(next => {
-      const students2: Student[] = next;
-      this.students = students2;
+      this.students = next;
       this.refreshTable();
       this.index = this.students[0].id;
     });
     this.dataSource = new MatTableDataSource<Student>(this.students);
+  }
+
+  subscribe(): void {
+    this.studentService.subscribeOnEvents(
+      event => {
+        this.students.push(JSON.parse(event.data));
+        this.refreshTable();
+      }
+    , error => {
+        console.log('Error');
+      });
   }
 
 

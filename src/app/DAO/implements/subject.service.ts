@@ -9,7 +9,7 @@ import {Subject} from '../../Model/Subject';
   providedIn: 'root'
 })
 export class SubjectService implements SubjectDao{
-  private url = 'http://localhost:8080/student';
+  public url = 'http://localhost:8080/subject';
 
   constructor(private httpClient: HttpClient) {
   }

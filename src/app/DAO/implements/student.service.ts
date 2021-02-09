@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 })
 export class StudentService implements StudentDao {
 
-  private url = 'http://localhost:8080/student';
+  public url = 'http://localhost:8080/student';
 
   constructor(private httpClient: HttpClient) {
   }
@@ -28,5 +28,11 @@ export class StudentService implements StudentDao {
 
   update(student: Student): Observable<string> {
    return this.httpClient.put(this.url + '/' + student.id + '/update', student, {responseType: 'text'});
+  }
+
+  subscribeOnEvents(onmessage: (s) => void, onerror: (error) => void): void {
+    const source = new EventSource(this.url + '/subscribe');
+    source.addEventListener('message', onmessage);
+    source.addEventListener('error', onerror);
   }
 }
